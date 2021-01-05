@@ -40,7 +40,7 @@ const Title = styled.h1`
 const MenuLink = ({ title, active, icon }) => {
     console.log('MenuLink Props', active);
     return (
-        <Container to={title.toLowerCase()}>
+        <Container to={title === 'Home' ? '/' : title.toLowerCase()}>
             <Span active={active} className="iconify" data-inline="false" data-icon={`mdi-light:${icon}`}></Span>
             <Title active={active}>{title}</Title>
         </Container>

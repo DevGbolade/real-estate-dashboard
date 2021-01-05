@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Nav from './Nav'
 import NewDepositBtn from './NewDepositBtn';
 import DepositContainer from './Deposits';
+import EmptyState from './EmptyState/EmptyState';
 import { Switch, Route } from 'react-router-dom'
 
 const Container = styled.div`
@@ -24,11 +25,11 @@ const Main = () => {
             <Nav/>
             <NewDepositBtn/>
             <Switch>
-                <Route path="/" exact/>
+                <Route path="/" exact component={DepositContainer}/>
                 <Route path="/deposits" exact component={DepositContainer}/>
-                <Route path="/offers" exact component={DepositContainer}/>
-                <Route path="/payments" exact component={DepositContainer}/>
-                <Route path="/settings" exact component={DepositContainer}/>
+                <Route path="/offers" exact component={EmptyState}/>
+                <Route path="/payments" exact component={EmptyState}/>
+                <Route path="/settings" exact component={EmptyState}/>
             </Switch>
         </Container>
     )
